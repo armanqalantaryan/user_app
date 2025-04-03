@@ -1,0 +1,15 @@
+@page "/register"
+@using user_app.Models
+@inject NavigationManager NavigationManager
+
+<h4>Register</h4>
+<UserForm TModel="@RegisterModel" Title="Register" OnSubmit="@RegisterUser" Model="_registerModel"/>
+
+@code {
+    private RegisterModel _registerModel { get; set; } = new RegisterModel();
+
+    private async Task RegisterUser()
+    {
+        
+    }
+}

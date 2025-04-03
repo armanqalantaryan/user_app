@@ -1,0 +1,31 @@
+@typeparam TModel where TModel : user_app.Models.IAuthModel
+
+<h3>@Title</h3>
+<EditForm Model="@Model" OnValidSubmit="@OnSubmit">
+    <DataAnnotationsValidator />
+
+    <div>
+        <label>Username</label>
+        <InputText @bind-Value="Model.UserName" />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <InputText @bind-Value="Model.Password" type="password" />
+    </div>
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter] 
+    public TModel Model { get; set; }
+
+    [Parameter]
+    public EventCallback OnSubmit { get; set; }
+
+}

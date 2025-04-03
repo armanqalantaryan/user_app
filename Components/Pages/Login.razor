@@ -1,0 +1,15 @@
+@page "/login"
+@using user_app.Models
+@inject NavigationManager NavigationManager
+
+<h4>Login</h4>
+<UserForm TModel="@LoginModel" Title="Login" OnSubmit="@LoginUser" Model="_loginModel" />
+
+@code {
+    private LoginModel _loginModel { get; set; } = new LoginModel();
+
+    private async Task LoginUser()
+    {
+        
+    }
+}
