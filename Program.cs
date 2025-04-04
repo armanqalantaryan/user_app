@@ -12,6 +12,7 @@ builder.Services.AddRazorComponents()
 // Add Auth and User services to the container
 
 builder.Services.AddScoped<IAuthService, AuthService>()
+    .AddScoped<IUserService, UserService>();
 
 //Add Db context
 
