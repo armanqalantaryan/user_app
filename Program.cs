@@ -1,12 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using user_app.Components;
 using user_app.Data;
+using user_app.Services;
+using user_app.Services.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+// Add Auth and User services to the container
+
+builder.Services.AddScoped<IAuthService, AuthService>()
 
 //Add Db context
 

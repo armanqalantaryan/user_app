@@ -1,6 +1,6 @@
 namespace user_app.Services;
 
-public interface IAuthService
+public interface IUserService
 {
     
 }

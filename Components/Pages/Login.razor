@@ -3,7 +3,12 @@
 @inject NavigationManager NavigationManager
 
 <h4>Login</h4>
-<UserForm TModel="@LoginModel" Title="Login" OnSubmit="@LoginUser" Model="_loginModel" />
+<UserForm 
+    TModel="@LoginModel" 
+    Title="Login" 
+    OnSubmit="@LoginUser" 
+    Model="_loginModel" 
+    SubmitButtonText="Login"/>
 
 @code {
     private LoginModel _loginModel { get; set; } = new LoginModel();

@@ -14,4 +14,13 @@ public class User
     [MaxLength(255)]
     public string PasswordHash { get; set; }
     
+    [Required]
+    [MaxLength(50)]
+    [EmailAddress]
+    public string Email { get; set; }
+    
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    
+    public DateTime? DeletedAt { get; set; } 
+    
 }

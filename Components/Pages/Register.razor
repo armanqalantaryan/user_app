@@ -3,7 +3,31 @@
 @inject NavigationManager NavigationManager
 
 <h4>Register</h4>
-<UserForm TModel="@RegisterModel" Title="Register" OnSubmit="@RegisterUser" Model="_registerModel"/>
+<UserForm
+    TModel="@RegisterModel"
+    Title="Register"
+    OnSubmit="@RegisterUser"
+    Model="_registerModel"
+    SubmitButtonText="Register">
+    
+    <CustomFields>
+
+        <div class="form-group">
+            <label>Email</label>
+            <InputText @bind-Value="_registerModel.Email" class="form-control" />
+            <ValidationMessage For="@(() => _registerModel.Email)" />
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <InputText type="password" @bind-Value="_registerModel.ConfirmPassword" class="form-control" />
+            <ValidationMessage For="@(() => _registerModel.ConfirmPassword)" />
+
+        </div>
+        
+    </CustomFields>
+    
+</UserForm>
 
 @code {
     private RegisterModel _registerModel { get; set; } = new RegisterModel();
